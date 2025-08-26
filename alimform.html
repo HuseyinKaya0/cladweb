@@ -174,8 +174,7 @@
   <main class="main-content">
     <h1>Hoşgeldiniz, CladRios Klanı!</h1>
     <p>
-      Klanımızın resmi web sitesine hoşgeldiniz. Buradan klanımız hakkında bilgi
-      alabilir, etkinliklerimizi takip edebilir ve bize ulaşabilirsiniz.
+      Klanımızın giriş kapısındasınız. Formu doldurun ve bizden haber bekleyin!
     </p>
 
     <div class="embed-container">
@@ -228,7 +227,7 @@
   </main>
 
   <script>
-    const webhookURL = "https://discord.com/api/webhooks/1408404315772555365/CQKrvNrr2rlP51RpYsAUntSCEj3FOh5gQchpqJkGvcqPoI5vQHZQdQMkAZ0GwaSio5yr";
+    const webhookURL = "https://discord.com/api/webhooks/1409841860276519045/n_4O4H3OkVewJ6L81KsIeCkWtcjF-NfqULgWGZO-zb4iseaJflW3jatVNd_GeSxt3Mvf";
 
     document.getElementById("discordForm").addEventListener("submit", function (e) {
       e.preventDefault();
@@ -252,13 +251,13 @@
       submitBtn.style.cursor = "not-allowed";
 
       const payload = {
-        username: 'CladRios Webhook',
-        content: 'Yeni bir başvuru alındı!',
+        username: 'CladRios Ekip Başvurusu',
+        content: '<@1409840422867439687>',
         embeds: [
           {
-            title: 'Yeni Başvuru',
-            description: 'Başvuruyu onaylamak veya reddetmek için aşağıdaki linki tıklayın:',
-            url: 'https://cladrios.neocities.org/onayred.html',
+            title: 'Yeni bir başvuru var!',
+            description: 'Başvuruyu onaylamak veya reddetmek için yukarıdaki linki tıklayın:',
+            url: 'https://cladrios.vercel.app/onayred.html',
             color: 3447003,
             fields: [
               {
@@ -293,7 +292,7 @@
               },
             ],
             footer: {
-              text: 'CladRios Klanı',
+              text: 'CladRios',
             },
             timestamp: new Date().toISOString(),
           },
@@ -323,3 +322,4 @@
 </body>
 
 </html>
+
