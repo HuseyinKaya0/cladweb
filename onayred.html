@@ -117,10 +117,10 @@
     <h1>Başvuru Onay/Reddet</h1>
     <p>Lütfen aşağıdaki formu doldurun ve başvuruyu onaylayın veya reddedin.</p>
     <form id="approvalForm">
-      <label for="userId">Kullanıcı ID:</label>
+      <label for="userId">Başvuran kullanıcı ID:</label>
       <input type="text" id="userId" name="userId" required />
 
-      <label for="action">İşlem Seçin:</label>
+      <label for="action">Kararınızı Seçin:</label>
       <select id="action" name="action" required>
         <option value="approve">Onayla</option>
         <option value="reject">Reddet</option>
@@ -130,6 +130,7 @@
       <input type="password" id="adminPass" name="adminPass" required placeholder="Yetkili şifresini girin" />
 
       <button type="submit" id="submitBtn">İşlemi Tamamla</button>
+      <p>Unutmayın! Kararınızı üstlerinize danışmalı ve kişisel görüşünüzü kullanmamalısınız.</p>
     </form>
     <div id="status"></div>
   </div>
@@ -147,7 +148,7 @@
 
   <script>
     // Şifrenizi buraya yazın (örnek: "cladrios2024")
-    const YETKILI_SIFRE = "cladrios2024";
+    const YETKILI_SIFRE = "cladbaba123";
 
     document.getElementById("approvalForm").addEventListener("submit", function (e) {
       e.preventDefault();
@@ -208,7 +209,7 @@
         ],
       };
 
-      const webhookURL = "https://discord.com/api/webhooks/1408409808440397946/XZyaTsH-Vr7AfxNedWPLK7y748v3gGKuueWknWm-IpCqoyr2rdk5taQZlQC0PHWlbMtZ";
+      const webhookURL = "https://discord.com/api/webhooks/1409841863313064036/3gVPEsTDMQ_ueo3yC7YxHRgEHD1OpQRFL2DxJpnSWKHsIQW0YkaY9In1ZD_OvPu89OId";
 
       fetch(webhookURL, {
         method: "POST",
@@ -261,3 +262,4 @@
   </script>
 </body>
 </html>
+
