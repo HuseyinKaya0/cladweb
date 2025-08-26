@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Başvuru Onay/Reddet</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+    body {
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      min-height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    .main-content {
+      max-width: 480px;
+      margin: 64px auto 0 auto;
+      padding: 32px 18px;
+      background: #181818;
+      border-radius: 22px;
+      box-shadow: none;
+      text-align: center;
+    }
+    h1 {
+      color: #00e6b8;
+      font-size: 2rem;
+      margin-bottom: 16px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    p {
+      font-size: 1.08rem;
+      color: #b2becd;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    form {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 700;
+      color: #fff;
+      font-family: 'Montserrat', Arial, sans-serif;
+      text-align: left;
+      width: 100%;
+      max-width: 340px;
+    }
+    input[type="text"], input[type="password"], select {
+      width: 100%;
+      max-width: 340px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: none;
+      background: #222;
+      color: #fff;
+      font-size: 1rem;
+      margin-bottom: 8px;
+      font-family: 'Montserrat', Arial, sans-serif;
+      box-sizing: border-box;
+    }
+    button {
+      background: #00e6b8;
+      color: #181818;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 0;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-family: 'Montserrat', Arial, sans-serif;
+      width: 100%;
+      max-width: 340px;
+    }
+    button:hover {
+      background: #00b894;
+    }
+    #status {
+      margin-top: 16px;
+      font-weight: 700;
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 1rem;
+      background: #222;
+      color: #00e6b8;
+      text-align: center;
+      max-width: 340px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media (max-width: 600px) {
+      .main-content {
+        max-width: 100%;
+        padding: 14px 8px;
+      }
+      input[type="text"], input[type="password"], select, button, #status {
+        max-width: 100%;
+      }
+    }
+    body, .main-content, .navbar, .navbar-logo, .navbar-menu, h1, h2, h3, h4, h5, h6, p, span, li, ul, div {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+  </style>
+</head>
+<body>
+  <div class="main-content">
+    <h1>Başvuru Onay/Reddet</h1>
+    <p>Lütfen aşağıdaki formu doldurun ve başvuruyu onaylayın veya reddedin.</p>
+    <form id="approvalForm">
+      <label for="userId">Kullanıcı ID:</label>
+      <input type="text" id="userId" name="userId" required />
+
+      <label for="action">İşlem Seçin:</label>
+      <select id="action" name="action" required>
+        <option value="approve">Onayla</option>
+        <option value="reject">Reddet</option>
+      </select>
+
+      <label for="adminPass">Yetkili Şifresi:</label>
+      <input type="password" id="adminPass" name="adminPass" required placeholder="Yetkili şifresini girin" />
+
+      <button type="submit" id="submitBtn">İşlemi Tamamla</button>
+    </form>
+    <div id="status"></div>
+  </div>
+
+  <!-- Yükleniyor ekranı için HTML kodunu <body> içine ekleyin -->
+<div id="loader-overlay" style="display:none;">
+  <div class="loader-content">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">
+      <span class="cladrios-anim">CladRios</span>
+      <span class="loading-dots">Yükleniyor<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span></span>
+    </div>
+  </div>
+</div>
+
+  <script>
+    // Şifrenizi buraya yazın (örnek: "cladrios2024")
+    const YETKILI_SIFRE = "cladrios2024";
+
+    document.getElementById("approvalForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const userId = document.getElementById("userId").value.trim();
+      const action = document.getElementById("action").value;
+      const adminPass = document.getElementById("adminPass").value;
+      const statusText = document.getElementById("status");
+      const submitBtn = document.getElementById("submitBtn");
+
+      if (!userId) {
+        statusText.textContent = "Lütfen kullanıcı ID'sini girin.";
+        statusText.style.color = "#ff3b3b";
+        return;
+      }
+
+      if (!adminPass) {
+        statusText.textContent = "Yetkili şifresi girilmelidir.";
+        statusText.style.color = "#ff3b3b";
+        return;
+      }
+
+      if (adminPass !== YETKILI_SIFRE) {
+        statusText.textContent = "Yetkili şifresi yanlış!";
+        statusText.style.color = "#ff3b3b";
+        return;
+      }
+
+      // Butonu devre dışı bırak, tekrar tıklanamaz yap
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = "0.6";
+      submitBtn.style.cursor = "not-allowed";
+
+      const payload = {
+        username: 'CladRios Bot',
+        embeds: [
+          {
+            title: 'Başvuru Durumu',
+            description: `Başvuru ${action === 'approve' ? 'onaylandı' : 'reddedildi'}`,
+            color: action === 'approve' ? 5763719 : 15158332,
+            fields: [
+              {
+                name: 'Kullanıcı',
+                value: `<@${userId}>`,
+                inline: true,
+              },
+              {
+                name: 'İşlem',
+                value: action === 'approve' ? 'Onayla' : 'Reddet',
+                inline: true,
+              },
+            ],
+            footer: {
+              text: 'CladRios Klanı',
+            },
+            timestamp: new Date().toISOString(),
+          },
+        ],
+      };
+
+      const webhookURL = "https://discord.com/api/webhooks/1408409808440397946/XZyaTsH-Vr7AfxNedWPLK7y748v3gGKuueWknWm-IpCqoyr2rdk5taQZlQC0PHWlbMtZ";
+
+      fetch(webhookURL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      })
+      .then((response) => {
+        if (response.ok) {
+          statusText.textContent = `${userId} için başvuru ${action === 'approve' ? 'onaylandı' : 'reddedildi'}!`;
+          statusText.style.color = action === 'approve' ? '#00e6b8' : '#ff3b3b';
+        } else {
+          statusText.textContent = "Mesaj gönderilirken bir hata oluştu.";
+          statusText.style.color = "#ff3b3b";
+        }
+      })
+      .catch((error) => {
+        statusText.textContent = "Hata oluştu: " + error;
+        statusText.style.color = "#ff3b3b";
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+    const overlay = document.getElementById("loader-overlay");
+    document.querySelectorAll('a[href]').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        const href = link.getAttribute('href');
+        if (
+          href && 
+          !href.startsWith('#') && 
+          !link.hasAttribute('target') && 
+          !href.startsWith('javascript:')
+        ) {
+          e.preventDefault();
+          overlay.style.display = "flex";
+          setTimeout(() => overlay.classList.add("active"), 10); // yumuşak başlat
+          setTimeout(function() {
+            window.location.href = href;
+          }, 2200); // 2.2 saniye beklet
+        }
+      });
+    });
+    // Sayfa yüklenince loader'ı yumuşakça gizle
+    window.addEventListener("pageshow", function() {
+      overlay.classList.remove("active");
+      setTimeout(() => { overlay.style.display = "none"; }, 600);
+    });
+  });
+  </script>
+</body>
+</html>

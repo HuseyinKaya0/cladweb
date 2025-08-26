@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cladrios Başvuru Formu</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Libertinus+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+    body {
+      background: #111;
+      margin: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    .main-content {
+      max-width: 700px;
+      margin: 64px auto 0 auto;
+      padding: 32px 18px;
+      background: #181818;
+      border-radius: 22px;
+      box-shadow: none;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+
+    p {
+      font-size: 1.08rem;
+      color: #b2becd;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+
+    .embed-container {
+      max-width: 500px;
+      background-color: #181818;
+      border-radius: 18px;
+      padding: 32px 24px;
+      color: #b2becd;
+      font-family: 'Montserrat', Arial, sans-serif;
+      box-shadow: none;
+      margin: 40px auto 0 auto;
+      text-align: left;
+    }
+
+    .embed-title {
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 18px;
+      color: #00e6b8;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 700;
+      color: #fff;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+
+    input[type="text"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: none;
+      background: #222;
+      color: #fff;
+      font-size: 1rem;
+      margin-bottom: 16px;
+      font-family: 'Montserrat', Arial, sans-serif;
+      resize: none;
+    }
+
+    button {
+      background: #00e6b8;
+      color: #181818;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 0;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      font-family: 'Montserrat', Arial, sans-serif;
+      width: 100%;
+    }
+
+    button:hover {
+      background: #00b894;
+    }
+
+    #status {
+      margin-top: 10px;
+      font-weight: 700;
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 1rem;
+      background: #222;
+      color: #00e6b8;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      .main-content, .embed-container {
+        max-width: 100%;
+        padding: 14px 8px;
+      }
+    }
+
+    body, .main-content, .navbar, .navbar-logo, .navbar-menu, h1, h2, h3, h4, h5, h6, p, span, li, ul, div {
+      user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+
+    /* Styling for the default "Bir Seçim Yapın" */
+    .placeholder-option {
+      color: #888;
+      font-style: italic;
+      pointer-events: none;
+    }
+
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="navbar-logo">CladRios</a>
+    <ul class="navbar-menu">
+      <li><a href="hakkimizda.html">Hakkımızda</a></li>
+      <li><a href="kasabalar.html">Kasabalar</a></li>
+      <li><a href="etkinlikler.html">Etkinlikler</a></li>
+      <li><a href="ekip.html">Ekip</a></li>
+      <li><a href="muttefikler.html">Müttefikler</a></li>
+      <li><a href="dusmanlar.html">Düşmanlar</a></li>
+      <li><a href="alimsart.html">Alım Şartları</a></li>
+      <li><a href="iletisim.html">İletişim</a></li>
+    </ul>
+  </nav>
+
+  <main class="main-content">
+    <h1>Hoşgeldiniz, CladRios Klanı!</h1>
+    <p>
+      Klanımızın resmi web sitesine hoşgeldiniz. Buradan klanımız hakkında bilgi
+      alabilir, etkinliklerimizi takip edebilir ve bize ulaşabilirsiniz.
+    </p>
+
+    <div class="embed-container">
+      <div class="embed-title">Başvuru Formu</div>
+      <form id="discordForm">
+        <label for="username">İsim:</label>
+        <input type="text" id="username" name="username" required />
+
+        <label for="server">Hangi sunucularda oynuyorsun?</label>
+        <select id="server" name="server" required>
+          <option value="" class="placeholder-option" selected disabled>Bir Seçim Yapın</option>
+          <option value="Adalances">Adalances</option>
+          <option value="MaviBuğday">MaviBuğday</option>
+          <option value="Crusalis">Crusalis</option>
+          <option value="Hiçbiri">Hiçbiri</option>
+        </select>
+
+        <label for="microphone">Mikrofonun var mı?</label>
+        <select id="microphone" name="microphone" required>
+          <option value="" class="placeholder-option" selected disabled>Bir Seçim Yapın</option>
+          <option value="Evet">Evet</option>
+          <option value="Hayır">Hayır</option>
+        </select>
+
+        <label for="tier">Tier'in nedir?</label>
+        <select id="tier" name="tier" required>
+          <option value="" class="placeholder-option" selected disabled>Bir Seçim Yapın</option>
+          <option value="LT5">LT5</option>
+          <option value="LT4">LT4</option>
+          <option value="LT3">LT3</option>
+          <option value="LT2">LT2</option>
+          <option value="LT1">LT1</option>
+          <option value="HT5">HT5</option>
+          <option value="HT4">HT4</option>
+          <option value="HT3">HT3</option>
+          <option value="HT2">HT2</option>
+          <option value="HT1">HT1</option>
+        </select>
+
+        <label for="previousClan">Önceden hangi klandaydın?</label>
+        <input type="text" id="previousClan" name="previousClan" />
+
+        <label for="reason">Neden bize katılmak istiyorsun?</label>
+        <textarea id="reason" name="reason" rows="6" minlength="50" required></textarea>
+
+        <button type="submit" id="submitBtn">Gönder</button>
+      </form>
+      <p id="status"></p>
+    </div>
+  </main>
+
+  <script>
+    const webhookURL = "https://discord.com/api/webhooks/1408545428970147930/o2RnC8RLNmxJgH1lQ_m-X0JfGLSsLozOX3nsUCMunuFJTQWdl7-svIBL1evnmZJLehni";
+
+    document.getElementById("discordForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const username = document.getElementById("username").value.trim();
+      const server = document.getElementById("server").value.trim();
+      const microphone = document.getElementById("microphone").value.trim();
+      const tier = document.getElementById("tier").value.trim();
+      const previousClan = document.getElementById("previousClan").value.trim();
+      const reason = document.getElementById("reason").value.trim();
+      const submitBtn = document.getElementById("submitBtn");
+
+      if (!username || !server || !microphone || !tier || !reason || reason.length < 50) {
+        alert("Lütfen tüm alanları doğru şekilde doldurun!");
+        return;
+      }
+
+      // Butonu devre dışı bırak
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = "0.6";
+      submitBtn.style.cursor = "not-allowed";
+
+      const payload = {
+        username: 'CladRios Webhook',
+        content: 'Yeni bir başvuru alındı!',
+        embeds: [
+          {
+            title: 'Yeni Başvuru',
+            description: 'Başvuruyu onaylamak veya reddetmek için aşağıdaki linki tıklayın:',
+            url: 'https://cladrios.neocities.org/onayred.html',
+            color: 3447003,
+            fields: [
+              {
+                name: 'İsim',
+                value: username,
+                inline: true,
+              },
+              {
+                name: 'Sunucu',
+                value: server,
+                inline: true,
+              },
+              {
+                name: 'Mikrofon',
+                value: microphone,
+                inline: true,
+              },
+              {
+                name: 'Tier',
+                value: tier,
+                inline: true,
+              },
+              {
+                name: 'Önceki Klan',
+                value: previousClan || "Belirtilmemiş",
+                inline: true,
+              },
+              {
+                name: 'Neden Katılmak İstiyorsun?',
+                value: reason,
+                inline: false,
+              },
+            ],
+            footer: {
+              text: 'CladRios Klanı',
+            },
+            timestamp: new Date().toISOString(),
+          },
+        ],
+      };
+
+      fetch(webhookURL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      })
+        .then((response) => {
+          if (response.ok) {
+            document.getElementById("status").textContent = "Başvuru Discord'a başarıyla gönderildi!";
+            document.getElementById("discordForm").reset();
+          } else {
+            document.getElementById("status").textContent = "Mesaj gönderilirken bir hata oluştu.";
+          }
+        })
+        .catch((error) => {
+          document.getElementById("status").textContent = "İstek başarısız oldu: " + error;
+        });
+    });
+  </script>
+</body>
+</html>
