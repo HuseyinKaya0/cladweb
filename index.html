@@ -83,6 +83,112 @@
       0%, 80%, 100% { opacity: 0.2; }
       40% { opacity: 1; }
     }
+    .haberler-kutusu, .boost-onur-kutusu {
+      background: #181f23;
+      border-radius: 14px;
+      box-shadow: 0 2px 16px #00e6b82a;
+      margin: 32px auto 0 auto;
+      max-width: 600px;
+      padding: 28px 32px 18px 32px;
+      color: #fff;
+      font-family: 'Libertinus Serif', serif;
+    }
+    .haberler-kutusu h2, .boost-onur-kutusu h2 {
+      color: #00e6b8;
+      font-size: 1.4rem;
+      margin-bottom: 14px;
+      letter-spacing: 0.08em;
+    }
+    .haberler-listesi, .boost-listesi {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 10px 0;
+    }
+    .haberler-listesi li, .boost-listesi li {
+      margin-bottom: 10px;
+      background: #232b2f;
+      border-radius: 7px;
+      padding: 10px 14px;
+      font-size: 1.05rem;
+      box-shadow: 0 1px 4px #00e6b81a;
+    }
+    .boost-user {
+      font-weight: bold;
+      color: #00e6b8;
+    }
+    .boost-badge {
+      margin-left: 6px;
+      font-size: 1.2em;
+    }
+    .boost-aciklama {
+      font-size: 0.98rem;
+      color: #b2fff3;
+      margin-top: 8px;
+    }
+    .boost-onur-kutusu-sag {
+      position: fixed;
+      top: 100px;
+      right: 32px;
+      width: 220px;
+      background: #181f23;
+      border-radius: 14px;
+      box-shadow: 0 2px 16px #00e6b82a;
+      padding: 18px 16px 12px 16px;
+      color: #fff;
+      font-family: 'Libertinus Serif', serif;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .boost-onur-kutusu-sag h2 {
+      color: #00e6b8;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      letter-spacing: 0.08em;
+      text-align: center;
+    }
+    .boost-listesi-sag {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 8px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .boost-listesi-sag li {
+      background: #232b2f;
+      border-radius: 7px;
+      padding: 7px 10px;
+      font-size: 0.98rem;
+      box-shadow: 0 1px 4px #00e6b81a;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .boost-user {
+      font-weight: bold;
+      color: #00e6b8;
+      font-size: 1em;
+    }
+    .boost-badge {
+      margin-left: 6px;
+      font-size: 1.1em;
+    }
+    .boost-aciklama-sag {
+      font-size: 0.93rem;
+      color: #b2fff3;
+      margin-top: 6px;
+      text-align: center;
+    }
+    @media (max-width: 900px) {
+      .boost-onur-kutusu-sag {
+        position: static;
+        width: 100%;
+        margin: 24px auto 0 auto;
+        max-width: 320px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -103,15 +209,369 @@
       <li><a href="etkinlikler.html">Etkinlikler</a></li>
       <li><a href="ekip.html">Ekip</a></li>
       <li><a href="muttefikler.html">Müttefikler</a></li>
-      <li><a href="dusmanlar.html">Düşmanlar</a></li>
       <li><a href="alimsart.html">Alım Şartları</a></li>
       <li><a href="iletisim.html">İletişim</a></li>
     </ul>
   </nav>
   <main class="main-content">
-    <h1>Hoşgeldiniz, CladRios Klanı!</h1>
-    <p>Klanımızın resmi web sitesine hoşgeldiniz. Buradan klanımız hakkında bilgi alabilir, etkinliklerimizi takip edebilir ve bize ulaşabilirsiniz.</p>
+    <div class="icerik-alani">
+      <!-- HABERLER ORTADA -->
+      <section class="haberler-merkez">
+        <div class="haberler-baslik-kutu">
+          <h2>Haberler</h2>
+        </div>
+        <ul class="haberler-listesi">
+          <li class="haber-karti">
+            <div class="haber-karti-ust">
+              <h3>Klanımızın websitesi bugün açılıyor!</h3>
+              <div class="haber-etiketler">
+                <span class="etiket klan">Klan</span>
+              </div>
+            </div>
+            <p>
+              Ekibimizin haftalardır uğraştığı websitemiz sonunda açıldı!
+              <a href="#" class="detay-link" data-modal="modal1">detaylara göz atın</a>.
+            </p>
+            <img src="cladbanner.png" alt="Haber Görseli">
+            <span class="haber-tarih">03.09.2025</span>
+          </li>
+      </section>
+      <!-- BOOSTERLAR SAĞDA (Önceki haline döndü) -->
+      <aside class="boost-onur-kutusu">
+        <h2>CladRios Booster Listesi</h2>
+        <ul class="boost-listesi">
+          <li>
+            <span class="boost-user">iWencxt</span> <span class="boost-badge">😈</span>
+          </li>
+          <li>
+            <span class="boost-user">Fluiex</span> <span class="boost-badge">🕋</span>
+          </li>
+          <li>
+            <span class="boost-user">☆PITTIK CIRAGI</span> <span class="boost-badge">👱🏻‍♀️</span>
+          </li>
+          <!-- Yeni boostlayan eklemek için aşağıya satır ekleyin -->
+        </ul>
+        <p class="boost-aciklama">Sunucumuza boost basan herkese teşekkürler!</p>
+      </aside>
+    </div>
   </main>
+
+  <style>
+    body {
+      background: #181818;
+      margin: 0;
+      font-family: 'Libertinus Serif', serif;
+    }
+    .main-content {
+      max-width: 1200px;
+      margin: 48px auto 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+    }
+    .icerik-alani {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      width: 100%;
+      gap: 48px;
+      justify-content: center;
+    }
+    .haberler-merkez {
+      flex: 1 1 0;
+      background: #232323;
+      border-radius: 32px;
+      box-shadow: 0 2px 16px #00000022;
+      padding: 32px 28px 32px 28px;
+      color: #fff;
+      min-width: 0;
+      max-width: 650px;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .haberler-baslik-kutu {
+      width: 100%;
+      background: #181f23;
+      border-radius: 18px;
+      box-shadow: 0 2px 12px #00e6b81a;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px 0 14px 0;
+    }
+    .haberler-baslik-kutu h2 {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 2.1rem;
+      font-weight: 900;
+      margin: 0;
+      letter-spacing: 0.02em;
+      color: #00e6b8;
+      text-align: center;
+    }
+    .haberler-listesi {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .haber-karti {
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto; /* Eklendi: Ortalamak için */
+      background: #181f23;
+      border-radius: 18px;
+      box-shadow: 0 2px 12px #00e6b81a;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      padding: 22px 18px 16px 18px;
+      width: 100%;
+      min-width: 0;
+      position: relative;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .haber-karti:hover {
+      box-shadow: 0 4px 24px #00e6b8a0;
+      transform: translateY(-2px) scale(1.012);
+    }
+    .haber-karti-ust {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      width: 100%;
+      gap: 12px;
+    }
+    .haber-karti h3 {
+      color: #fff;
+      font-size: 1.7rem;
+      margin: 0 0 8px 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 900;
+      text-align: left;
+      flex: 1;
+      letter-spacing: 0.01em;
+      line-height: 1.2;
+    }
+    .haber-etiketler {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      justify-content: flex-end;
+      min-width: 0;
+      margin-left: 16px;
+    }
+    .etiket {
+      display: inline-block;
+      padding: 2px 14px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: 'Montserrat', Arial, sans-serif;
+      color: #fff;
+      background: #444;
+      letter-spacing: 0.04em;
+      text-shadow: 0 1px 6px #0008;
+      white-space: nowrap;
+      margin-left: 0;
+    }
+    .etiket.siege { background: #e67e22; }
+    .etiket.cekilis { background: #9b59b6; }
+    .etiket.klan { background: #00e6b8; color: #181818; }
+    .haber-karti p {
+      color: #e0e0e0;
+      font-size: 1.13rem;
+      margin: 10px 0 0 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 500;
+      text-align: left;
+    }
+    .haber-karti a {
+      color: #00e6b8;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+    .haber-karti img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 1px 8px #00e6b81a;
+      margin: 18px 0 0 0;
+      align-self: center;
+    }
+    .haber-tarih {
+      color: #b2fff3;
+      font-size: 0.98rem;
+      margin-top: 10px;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 600;
+      opacity: 0.7;
+      align-self: flex-end;
+    }
+    .boost-onur-kutusu {
+      background: linear-gradient(135deg, #a259ff 0%, #f857a6 100%);
+      border-radius: 18px;
+      box-shadow: 0 2px 24px #a259ff44, 0 1px 8px #f857a644;
+      margin: 0;
+      max-width: 240px;
+      min-width: 180px;
+      padding: 28px 18px 18px 18px;
+      color: #fff;
+      font-family: 'Libertinus Serif', serif;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      height: fit-content;
+      border: 2px solid #f857a6;
+    }
+    .boost-onur-kutusu h2 {
+      color: #fff;
+      font-size: 1.18rem;
+      margin-bottom: 14px;
+      letter-spacing: 0.08em;
+      text-align: center;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 700;
+      text-shadow: 0 2px 12px #a259ff99;
+    }
+    .boost-listesi {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 10px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .boost-listesi li {
+      background: rgba(255,255,255,0.08);
+      border-radius: 7px;
+      padding: 7px 10px;
+      font-size: 1.02rem;
+      box-shadow: 0 1px 4px #f857a633;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-left: 4px solid #a259ff;
+      border-right: 4px solid #f857a6;
+    }
+    .boost-user {
+      font-weight: bold;
+      color: #fff;
+      font-size: 1em;
+      font-family: 'Montserrat', Arial, sans-serif;
+      text-shadow: 0 1px 8px #a259ff88;
+    }
+    .boost-badge {
+      margin-left: 6px;
+      font-size: 1.2em;
+      color: #f857a6;
+      text-shadow: 0 1px 8px #a259ff88;
+    }
+    .boost-aciklama {
+      font-size: 0.98rem;
+      color: #ffe3fa;
+      margin-top: 8px;
+      text-align: center;
+      font-family: 'Montserrat', Arial, sans-serif;
+      text-shadow: 0 1px 8px #a259ff88;
+    }
+    @media (max-width: 1100px) {
+      .main-content {
+        max-width: 98vw;
+        padding: 0 2vw;
+      }
+      .icerik-alani {
+        gap: 24px;
+      }
+    }
+    @media (max-width: 900px) {
+      .icerik-alani {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 24px;
+      }
+      .boost-onur-kutusu {
+        max-width: 100%;
+        width: 100%;
+        margin: 0 auto;
+        padding-left: 8vw;
+        padding-right: 8vw;
+      }
+      .haberler-merkez {
+        max-width: 100%;
+        margin-bottom: 0;
+        padding-left: 4vw;
+        padding-right: 4vw;
+      }
+      .haber-karti {
+        padding: 14px 6vw 14px 6vw;
+      }
+      .haber-karti-ust {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      .haber-etiketler {
+        margin-left: 0;
+        margin-top: 8px;
+        justify-content: flex-start;
+      }
+      .haber-karti img {
+        height: 140px;
+      }
+    }
+    .haber-modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0; top: 0; width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.65);
+      align-items: center;
+      justify-content: center;
+    }
+    .haber-modal.active {
+      display: flex;
+    }
+    .haber-modal-icerik {
+      background: #232323;
+      border-radius: 18px;
+      padding: 32px 28px;
+      max-width: 400px;
+      width: 90vw;
+      color: #fff;
+      box-shadow: 0 4px 32px #00e6b855;
+      position: relative;
+      text-align: left;
+    }
+    .haber-modal-icerik h3 {
+      margin-top: 0;
+      color: #00e6b8;
+      font-size: 1.3rem;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    .haber-modal-kapat {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      font-size: 2rem;
+      color: #fff;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    .haber-modal-kapat:hover {
+      opacity: 1;
+    }
+  </style>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const overlay = document.getElementById("loader-overlay");
@@ -138,7 +598,37 @@
         overlay.classList.remove("active");
         setTimeout(() => { overlay.style.display = "none"; }, 600);
       });
+
+      // MODAL KODLARI BURADA OLMALI
+      document.querySelectorAll('.detay-link').forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          var modalId = link.getAttribute('data-modal');
+          var modal = document.getElementById(modalId);
+          if(modal) modal.classList.add('active');
+        });
+      });
+      document.querySelectorAll('.haber-modal-kapat').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          btn.closest('.haber-modal').classList.remove('active');
+        });
+      });
+      window.addEventListener('click', function(e) {
+        document.querySelectorAll('.haber-modal.active').forEach(function(modal) {
+          if(e.target === modal) modal.classList.remove('active');
+        });
+      });
     });
   </script>
+  <!-- Yeni modal ekleme -->
+  <div id="modal1" class="haber-modal">
+    <div class="haber-modal-icerik">
+      <span class="haber-modal-kapat" title="Kapat">&times;</span>
+      <h3></h3>
+      <p>
+         Artık ekip başvuru işlemleri "<a href="alimsart.html" style="color:#00e6b8; text-decoration:underline;">Alım Şartları</a>" sayfasından yapılabilecek.
+      </p>
+    </div>
+  </div>
 </body>
 </html>
