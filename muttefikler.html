@@ -54,8 +54,6 @@
       overflow: hidden;
       opacity: 0;
       transition: max-height 0.4s cubic-bezier(.4,0,.2,1), opacity 0.3s;
-      color: #b2becd;
-      font-size: 1rem;
       margin-top: 0;
     }
     .ally-card.open .ally-details {
@@ -145,6 +143,101 @@
       0%, 80%, 100% { opacity: 0.2; }
       40% { opacity: 1; }
     }
+    .discord-invite-card {
+      background: #23272a;
+      border-radius: 12px;
+      padding: 18px 18px 14px 18px;
+      box-shadow: 0 2px 16px #23272a44;
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    .invite-card-header {
+      color: #b2becd;
+      font-size: 1.02rem;
+      margin-bottom: 12px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+    .invite-card-body {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .invite-server-logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: #181818;
+      object-fit: cover;
+      box-shadow: 0 1px 8px #0004;
+      flex-shrink: 0;
+    }
+    .invite-server-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+    .invite-server-name {
+      font-size: 1.13rem;
+      font-weight: 800;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .invite-server-verified {
+      color: #00e6b8;
+      font-size: 1.1em;
+    }
+    .invite-server-stats {
+      font-size: 0.98rem;
+      color: #b2becd;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .invite-server-online::before {
+      content: '';
+      display: inline-block;
+      width: 8px; height: 8px;
+      background: #43b581;
+      border-radius: 50%;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+    .invite-join-btn {
+      background: #248046;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.05rem;
+      border-radius: 8px;
+      padding: 10px 22px;
+      text-decoration: none;
+      margin-left: 18px;
+      transition: background 0.18s;
+      box-shadow: 0 2px 12px #24804644;
+      white-space: nowrap;
+    }
+    .invite-join-btn:hover {
+      background: #2ecc71;
+    }
+    @media (max-width: 700px) {
+      .invite-card-body {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+      }
+      .invite-join-btn {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -156,7 +249,6 @@
       <li><a href="etkinlikler.html">Etkinlikler</a></li>
       <li><a href="ekip.html">Ekip</a></li>
       <li><a href="muttefikler.html">Müttefikler</a></li>
-      <li><a href="dusmanlar.html">Düşmanlar</a></li>
       <li><a href="alimsart.html">Alım Şartları</a></li>
       <li><a href="iletisim.html">İletişim</a></li>
     </ul>
@@ -170,8 +262,23 @@
           <span class="ally-toggle">&#9654;</span>
         </div>
         <div class="ally-details">
-          <p>Klan Alpha, 2020 yılında kurulmuş ve PvP odaklı bir topluluktur. Birlikte birçok etkinlikte yer aldık ve güçlü bir dostluğumuz var.</p>
-          <p><b>İletişim:</b> alpha#1234</p>
+          <div class="discord-invite-card">
+            <div class="invite-card-header"></div>
+            <div class="invite-card-body">
+              <img class="invite-server-logo" src="https://cdn.discordapp.com/icons/1108744854407749652/a_d89e6f8bda3a7b98b18bd3586e85328f.gif?size=1024" alt="APEX Sunucu Logosu">
+              <div class="invite-server-info">
+                <div class="invite-server-name">
+                  <span>A P E X</span>
+                  <span class="invite-server-verified" title="Doğrulanmış Sunucu"></span>
+                </div>
+                <div class="invite-server-stats">
+                  <span class="invite-server-online"></span>
+                  <span class="invite-server-members"></span>
+                </div>
+              </div>
+              <a class="invite-join-btn" href="https://discord.gg/uB2srkgG" target="_blank" rel="noopener">Katıl</a>
+            </div>
+          </div>
         </div>
       </div>
       <div class="ally-card">
@@ -180,8 +287,23 @@
           <span class="ally-toggle">&#9654;</span>
         </div>
         <div class="ally-details">
-          <p>Beta Takımı, strateji ve yardımlaşma konusunda uzmanlaşmış bir müttefik klanımızdır. Birçok ortak başarıya imza attık.</p>
-          <p><b>İletişim:</b> beta#5678</p>
+          <div class="discord-invite-card">
+            <div class="invite-card-header"></div>
+            <div class="invite-card-body">
+              <img class="invite-server-logo" src="https://cdn.discordapp.com/icons/1386731414321496145/f42e1f29e89b66f40aa85866e610a056.webp" alt="KuranKursu Sunucu Logosu">
+              <div class="invite-server-info">
+                <div class="invite-server-name">
+                  <span>𝐊𝐮𝐫𝐚𝐧𝐊𝐮𝐫𝐬𝐮 #1</span>
+                  <span class="invite-server-verified" title="Doğrulanmış Sunucu"></span>
+                </div>
+                <div class="invite-server-stats">
+                  <span class="invite-server-online"></span>
+                  <span class="invite-server-members"></span>
+                </div>
+              </div>
+              <a class="invite-join-btn" href="https://discord.gg/kurankursu" target="_blank" rel="noopener">Katıl</a>
+            </div>
+          </div>
         </div>
       </div>
       <div class="ally-card">
@@ -190,38 +312,23 @@
           <span class="ally-toggle">&#9654;</span>
         </div>
         <div class="ally-details">
-          <p>Genellikle Towny sunucularında aktif olarak oynayan, her geçen gün daha fazla sunucuda ismimizi duyuran bir ekibiz. Aramıza katılmak isteyen herkese kapımız sonuna kadar açık.</p>
-          <p><b>Discord İletişim:</b>  espenderman1453</p>
-        </div>
-      </div>
-      <div class="ally-card">
-        <div class="ally-header" onclick="toggleAlly(this)">
-          <span class="ally-title">TheForest</span>
-          <span class="ally-toggle">&#9654;</span>
-        </div>
-        <div class="ally-details">
-          <p>Beta Takımı, strateji ve yardımlaşma konusunda uzmanlaşmış bir müttefik klanımızdır. Birçok ortak başarıya imza attık.</p>
-          <p><b>İletişim:</b> beta#5678</p>
-        </div>
-      </div>
-      <div class="ally-card">
-        <div class="ally-header" onclick="toggleAlly(this)">
-          <span class="ally-title">TurkPolis</span>
-          <span class="ally-toggle">&#9654;</span>
-        </div>
-        <div class="ally-details">
-          <p>Beta Takımı, strateji ve yardımlaşma konusunda uzmanlaşmış bir müttefik klanımızdır. Birçok ortak başarıya imza attık.</p>
-          <p><b>İletişim:</b> beta#5678</p>
-        </div>
-      </div>
-      <div class="ally-card">
-        <div class="ally-header" onclick="toggleAlly(this)">
-          <span class="ally-title">Bizans</span>
-          <span class="ally-toggle">&#9654;</span>
-        </div>
-        <div class="ally-details">
-          <p>Beta Takımı, strateji ve yardımlaşma konusunda uzmanlaşmış bir müttefik klanımızdır. Birçok ortak başarıya imza attık.</p>
-          <p><b>İletişim:</b> beta#5678</p>
+          <div class="discord-invite-card">
+            <div class="invite-card-header"></div>
+            <div class="invite-card-body">
+              <img class="invite-server-logo" src="https://cdn.discordapp.com/icons/1349839537815294067/8641b269b8eac814183d60d2bb217d3c.webp" alt="Tetrarchs Sunucu Logosu">
+              <div class="invite-server-info">
+                <div class="invite-server-name">
+                  <span>Tetrarchs</span>
+                  <span class="invite-server-verified" title="Doğrulanmış Sunucu"></span>
+                </div>
+                <div class="invite-server-stats">
+                  <span class="invite-server-online"></span>
+                  <span class="invite-server-members"></span>
+                </div>
+              </div>
+              <a class="invite-join-btn" href="https://discord.gg/Tcm7an3s9E" target="_blank" rel="noopener">Katıl</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -264,6 +371,25 @@
       window.addEventListener("pageshow", function() {
         overlay.classList.remove("active");
         setTimeout(() => { overlay.style.display = "none"; }, 600);
+      });
+    });
+    // Statik örnek, isterseniz aşağıdaki değerleri dinamik de yapabilirsiniz:
+    document.addEventListener("DOMContentLoaded", function() {
+      // Örnek: APEX sunucusu için
+      document.querySelectorAll('.ally-card').forEach(function(card) {
+        const name = card.querySelector('.ally-title')?.textContent?.trim();
+        if(name === "APEX") {
+          card.querySelector('.invite-server-online').textContent = "927 Üye";
+
+        }
+        if(name === "KuranKursu") {
+          card.querySelector('.invite-server-online').textContent = "244 Üye";
+
+        }
+        if(name === "Tetrarchs") {
+          card.querySelector('.invite-server-online').textContent = "325 Üye";
+ 
+        }
       });
     });
   </script>
